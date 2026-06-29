@@ -101,12 +101,12 @@ export default function Hero() {
             className="text-4xl sm:text-5xl md:text-6xl font-bold text-silver-900 leading-[1.12] tracking-tight"
           >
             Perak bukan sekadar logam.{' '}
-            <span className="text-silver-400">Ia adalah nilai yang tahan waktu.</span>
+            <span className="text-black">Ia adalah nilai yang tahan waktu.</span>
           </motion.h1>
 
           <motion.p
             variants={item}
-            className="text-lg sm:text-xl text-silver-500 max-w-xl leading-relaxed"
+            className="text-lg sm:text-xl text-black max-w-xl leading-relaxed"
           >
             SILVERMU menyediakan logam mulia 24 karat dengan kemurnian 999. Investasi perak fisik yang aman dan terjangkau untuk generasi Indonesia.
           </motion.p>
