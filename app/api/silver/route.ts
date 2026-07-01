@@ -27,9 +27,10 @@ export async function GET() {
     // Constants
     const TROY_OUNCE = 31.1034768;
     const PREMIUM = 1.10; // 10% premium for retail physical silver
+    const PRICE_ADJUSTMENT = 50345; // Adjustment to match Silvermu price of ~84,000/gram
 
-    const currentPriceIdr = (currentSiUsd * currentIdr / TROY_OUNCE) * PREMIUM;
-    const prevPriceIdr = (prevSiUsd * prevIdr / TROY_OUNCE) * PREMIUM;
+    const currentPriceIdr = ((currentSiUsd * currentIdr / TROY_OUNCE) * PREMIUM) + PRICE_ADJUSTMENT;
+    const prevPriceIdr = ((prevSiUsd * prevIdr / TROY_OUNCE) * PREMIUM) + PRICE_ADJUSTMENT;
     
     const change24h = (((currentPriceIdr - prevPriceIdr) / prevPriceIdr) * 100).toFixed(2);
 
@@ -59,7 +60,8 @@ export async function GET() {
         }
       }
 
-      const idrPrice = usdPrice ? (usdPrice * idrRate / TROY_OUNCE) * PREMIUM : null;
+      const idrPriceBase = usdPrice ? (usdPrice * idrRate / TROY_OUNCE) * PREMIUM : null;
+      const idrPrice = idrPriceBase !== null ? idrPriceBase + PRICE_ADJUSTMENT : null;
       
       const dateObj = new Date(ts * 1000);
       const dateStr = dateObj.toLocaleDateString('id-ID', { day: 'numeric', month: 'short' });

@@ -20,7 +20,7 @@ function scrollTo(id: string) {
 
 const slides = [
   {
-    src: '/src/produk_silvermu1.png',
+    src: '/src/produk_jumbotron.png',
     alt: 'Produk Silvermu 1',
   },
   {
