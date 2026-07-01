@@ -88,6 +88,9 @@ export default function ProductShowcase() {
                   <div className="absolute top-4 left-4 bg-emerald-600 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-md z-10 tracking-wider">
                     Rp {prod.price.toLocaleString('id-ID')}
                   </div>
+                  <div className="absolute top-4 right-4 bg-zinc-800 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-md z-10 tracking-wider">
+                    Kadar 99%
+                  </div>
                   <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-silver-200 rounded-full blur-3xl opacity-50 group-hover:opacity-70 transition-opacity"></div>
                   <img 
                     src={prod.image} 
